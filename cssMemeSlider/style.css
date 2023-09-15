@@ -1,79 +1,159 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    background-color: #000;
     }
     
-    *, *::before, *::after{
+    * {
     box-sizing: inherit;
     }
-    
-    body {
-    margin: 0 auto;
-    }
+   
+    .wrapper {
+        width: 90%;
+        max-width: 60vh;
+        margin: 1rem auto;
+        overflow: hidden;
+        border-radius: 3%;
+        /* position: relative; */
+      } 
 
-.slider__wrapper {
-    max-width: 1024px;
-    margin: 0 auto;
-    background: #000;
-    }
+      input {
+        display: none;
+      }
 
-.window_slider {
-    width: 20%;
-	float: left;
-    }
-    
-    .about__image_slider {
-    width: 500%;
-    line-height: 0;
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    margin: 0 auto;
-    padding: 0 20px;
-    transition: 1s; */
-    /* overflow: hidden; */
-    }
+      .slides_image {
+        display: flex;
+        width: calc(400% + 3rem);
+        gap: 1rem;
+        transition: .6s;
+        border-radius: 3%;
+      }
 
-    .about-image__item{
-    width: 400%;
-    line-height: 0;
-    /* height: auto;
-    margin-top: 20px; */
-    border-radius: 5%;
-    /* overflow: hidden; */
-    }
-    
-    .about_buttons {
-     max-width: 1440px;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    gap: 10px;
-    }
-    
-    .dot {
-        display: inline-block;
-        background-color: #1818eb;
-        width: 16px;
-        height: 16px;
-        padding: 5px;
-        border-radius: 50%;
-        margin-top: 40px;
-        margin-bottom: 9px;
-        gap: 5px;
-        cursor:pointer  
-    }
-    
+      .image__item {
+        width: calc((100% - 3rem) / 4);
+        scroll-snap-align: start;
+        border-radius: 3%;
+      }
+
+      .image__item img {
+        width: 100%;
+        height: auto;
+        border-radius: 3%;
+      }
+
+      .sliders-text {
+        margin-top: 0.2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 5%;
         
-    .dot_active {
-        background-color: #000;
-        /* border-color: #1818eb; */
-        border: 3px solid #1818eb;
+      }
+
+      .text-image {
+        margin-top: 0.5rem;
+      }
+
+      .text {
+        height: 0;
+        opacity: 0;
+        transition: opacity 1s;
+        visibility: hidden;
+        color: #FFF;
+      }
+
+#selector1:checked ~ .sliders-text > .text-image > #text1,
+#selector2:checked ~ .sliders-text > .text-image > #text2,
+#selector3:checked ~ .sliders-text > .text-image > #text3,
+#selector4:checked ~ .sliders-text > .text-image > #text4 {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+
+.controls {
+    display: flex;
+    background-color: #000;
+  }
+
+  .control {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .control > span {
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: solid 0.1rem #2d3edb;
+    background-color: #2d3edb;
+    border-radius: 50%;
+    transition: .2s;
+  }
+
+  .control:hover {
+    cursor: pointer;
+  }
+
+  #selector1:checked ~ .slides_image {
+    transform: translateX(0);
+  }
+  
+  #selector2:checked ~ .slides_image {
+    transform: translateX(calc(-25% * 1 - 1rem / 3));
+  }
+  
+  #selector3:checked ~ .slides_image {
+    transform: translateX(calc(-25% * 2 - 2rem / 3));
+  }
+  
+  #selector4:checked ~ .slides_image {
+    transform: translateX(calc(-25% * 3 - 3rem / 3));
+  }
+  
+  #selector1:checked ~ .sliders-text > .controls > #control1 > span,
+  #selector2:checked ~ .sliders-text > .controls > #control2 > span,
+  #selector3:checked ~ .sliders-text > .controls > #control3 > span,
+  #selector4:checked ~ .sliders-text > .controls > #control4 > span {
+    border: solid 0.1rem #2d3edb;
+    background-color: transparent;
+  }
+  
+  #selector1:checked ~ .sliders-text > .controls > #control1:hover > span,
+  #selector2:checked ~ .sliders-text > .controls > #control2:hover > span,
+  #selector3:checked ~ .sliders-text > .controls > #control3:hover > span,
+  #selector4:checked ~ .sliders-text > .controls > #control4:hover > span {
+    border: solid 0.1rem #FFF;
+    /* background-color: #FFF; */
+
+  }
+  
+  #selector1:checked ~ .sliders-text > .controls > #control1:active > span,
+  #selector2:checked ~ .sliders-text > .controls > #control2:active > span,
+  #selector3:checked ~ .sliders-text > .controls > #control3:active > span,
+  #selector4:checked ~ .sliders-text > .controls > #control4:active > span {
+    border: solid 0.1rem #FFF;
+  }
+
+  .control:hover > span {
+    border: solid 0.1rem #FFF;
+    background-color: #FFF;
+  }
+
+  .control:active > span {
+    border: solid 0.1rem #FFF;
+    background-color: #FFF;
+  }
+  
+  @media screen and (max-width: 500px) {
+   
+    .sliders-text {
+        margin-top: 0.2rem;
+        display: flex;
+        justify-content: none;
+        gap: 5%;
     }
-    
-    .dot:hover {
-        background-color: #d8d8f4;
-    }
-    
- 
+
+  }
