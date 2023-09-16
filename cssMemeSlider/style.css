@@ -14,7 +14,6 @@ html {
         margin: 1rem auto;
         overflow: hidden;
         /* border-radius: 3%; */
-        /* position: relative; */
       } 
 
       input {
@@ -59,6 +58,9 @@ html {
         opacity: 0;
         transition: opacity 1s;
         visibility: hidden;
+        font-size: 80%;
+        line-height: 100%;
+        font-style: normal;
         color: #FFF;
       }
 
@@ -77,8 +79,8 @@ html {
   }
 
   .control {
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +93,7 @@ html {
     border: solid 0.1rem #2d3edb;
     background-color: #2d3edb;
     border-radius: 50%;
-    transition: .2s;
+    transition: .3s;
   }
 
   .control:hover {
@@ -161,11 +163,11 @@ html {
       gap: 5%;
   }
 
-  .text-image {
-    /* margin-top: 1rem; */
-    margin-left: 0;
-    text-align: left;
-    width: 100%;
-}
+    .text-image {
+      /* margin-top: 1rem; */
+      margin-left: 0;
+      text-align: left;
+      width: 100%;
+  }
 
   }
