@@ -10,7 +10,7 @@ html {
    
     .wrapper {
         width: 90%;
-        max-width: 60vh;
+        max-width: 70vh;
         margin: 1rem auto;
         overflow: hidden;
         /* border-radius: 3%; */
@@ -42,7 +42,7 @@ html {
       }
 
       .sliders-text {
-        margin-top: 0.2rem;
+        margin-top: 0.5rem;
         display: flex;
         justify-content: space-between;
         align-items: baseline;
@@ -154,10 +154,18 @@ html {
   @media screen and (max-width: 500px) {
    
     .sliders-text {
-        margin-top: 0.2rem;
-        display: flex;
-        justify-content: none;
-        gap: 5%;
-    }
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 5%;
+  }
+
+  .text-image {
+    /* margin-top: 1rem; */
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+}
 
   }
