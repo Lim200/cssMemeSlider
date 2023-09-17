@@ -1,0 +1,196 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: #000;
+    }
+    
+    * {
+    box-sizing: inherit;
+    }
+   
+  /* @media screen and (max-width: 1024px)  { */
+
+    .wrapper {
+        width: 90%;
+        max-width: 80vh;
+        margin: 1rem auto;
+        overflow: hidden;
+        /* border-radius: 3%; */
+      } 
+
+      input {
+        display: none;
+      }
+
+      .slides_image {
+        display: flex;
+        width: calc(400% + 3rem);
+        gap: 1rem;
+        transition: .6s;
+        border-radius: 5%;
+      }
+
+      .image__item {
+        width: calc((100% - 3rem) / 4);
+        scroll-snap-align: start;
+        border-radius: 5%;
+      }
+
+      .image__item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5%;
+      }
+
+      .sliders-text {
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 5%;
+        
+      }
+
+      .text-image {
+        margin-top: 0.5rem;
+      }
+
+      .text {
+        height: 0;
+        opacity: 0;
+        transition: opacity 1s;
+        visibility: hidden;
+        font-size: 80%;
+        line-height: 100%;
+        font-style: normal;
+        color: #FFF;
+      }
+
+#selector1:checked ~ .sliders-text > .text-image > #text1,
+#selector2:checked ~ .sliders-text > .text-image > #text2,
+#selector3:checked ~ .sliders-text > .text-image > #text3,
+#selector4:checked ~ .sliders-text > .text-image > #text4 {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+
+.controls {
+    display: flex;
+    background-color: #000;
+  }
+
+  .control {
+    width: 1.2rem;
+    height: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .control > span {
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: solid 0.1rem #2d3edb;
+    background-color: #2d3edb;
+    border-radius: 50%;
+    transition: .3s;
+  }
+
+  .control:hover {
+    cursor: pointer;
+  }
+
+  #selector1:checked ~ .slides_image {
+    transform: translateX(0);
+  }
+  
+  #selector2:checked ~ .slides_image {
+    transform: translateX(calc(-24.9% * 1 - 1rem / 3));
+    border-radius: 5%;
+  }
+  
+  #selector3:checked ~ .slides_image {
+    transform: translateX(calc(-24.9% * 2 - 2rem / 3));
+    border-radius: 5%;
+  }
+  
+  #selector4:checked ~ .slides_image {
+    transform: translateX(calc(-24.9% * 3 - 3rem / 3));
+    border-radius: 5%;
+  }
+  
+  #selector1:checked ~ .sliders-text > .controls > #control1 > span,
+  #selector2:checked ~ .sliders-text > .controls > #control2 > span,
+  #selector3:checked ~ .sliders-text > .controls > #control3 > span,
+  #selector4:checked ~ .sliders-text > .controls > #control4 > span {
+    border: solid 0.1rem #2d3edb;
+    background-color: transparent;
+  }
+  
+  #selector1:checked ~ .sliders-text > .controls > #control1:hover > span,
+  #selector2:checked ~ .sliders-text > .controls > #control2:hover > span,
+  #selector3:checked ~ .sliders-text > .controls > #control3:hover > span,
+  #selector4:checked ~ .sliders-text > .controls > #control4:hover > span {
+    border: solid 0.1rem #FFF;
+    /* background-color: #FFF; */
+
+  }
+  
+  #selector1:checked ~ .sliders-text > .controls > #control1:active > span,
+  #selector2:checked ~ .sliders-text > .controls > #control2:active > span,
+  #selector3:checked ~ .sliders-text > .controls > #control3:active > span,
+  #selector4:checked ~ .sliders-text > .controls > #control4:active > span {
+    border: solid 0.1rem 
+  }
+
+  .control:hover > span {
+    border: solid 0.1rem #FFF;
+    background-color: #FFF;
+  }
+
+  .control:active > span {
+    border: solid 0.1rem #FFF;
+    background-color: #FFF;
+  }
+
+  /* } */
+
+
+  @media screen and (max-width: 500px) and (min-width: 0px) {
+   
+    .sliders-text {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 5%;
+  }
+
+    .text-image {
+      margin-left: 0;
+      /* text-align: left; */
+      /* align-items: baseline; */
+      width: 100%;
+  }
+
+  }
+/* 
+  @media screen and (min-width: 501px) and (max-width: 1024px) {
+  
+    .sliders-text {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 5%;
+      
+    }
+
+    .text-image {
+      margin-top: 0.5rem;
+     
+    }
+  }
+   */
