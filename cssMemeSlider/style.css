@@ -8,9 +8,11 @@ html {
     box-sizing: inherit;
     }
    
+  /* @media screen and (max-width: 1024px)  { */
+
     .wrapper {
         width: 90%;
-        max-width: 70vh;
+        max-width: 80vh;
         margin: 1rem auto;
         overflow: hidden;
         /* border-radius: 3%; */
@@ -140,7 +142,7 @@ html {
   #selector2:checked ~ .sliders-text > .controls > #control2:active > span,
   #selector3:checked ~ .sliders-text > .controls > #control3:active > span,
   #selector4:checked ~ .sliders-text > .controls > #control4:active > span {
-    border: solid 0.1rem #FFF;
+    border: solid 0.1rem 
   }
 
   .control:hover > span {
@@ -152,8 +154,11 @@ html {
     border: solid 0.1rem #FFF;
     background-color: #FFF;
   }
-  
-  @media screen and (max-width: 500px) {
+
+  /* } */
+
+
+  @media screen and (max-width: 500px) and (min-width: 0px) {
    
     .sliders-text {
       display: flex;
@@ -164,10 +169,28 @@ html {
   }
 
     .text-image {
-      /* margin-top: 1rem; */
       margin-left: 0;
-      text-align: left;
+      /* text-align: left; */
+      /* align-items: baseline; */
       width: 100%;
   }
 
   }
+/* 
+  @media screen and (min-width: 501px) and (max-width: 1024px) {
+  
+    .sliders-text {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 5%;
+      
+    }
+
+    .text-image {
+      margin-top: 0.5rem;
+     
+    }
+  }
+   */
